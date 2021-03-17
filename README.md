@@ -19,6 +19,44 @@ Other times, you may simply want more assurance than Livewire provides out of th
 
 The second option is recommended, because it provides the most security benefits. Accidentally making methods `public` is common, and it can cause security issues. Disabling implicit access can be especially useful on teams with junior engineers who don't yet have a full understanding of Livewire's internals, but can be very productive with it.
 
+## Practical use case
+
+Say you have a component with the following method:
+
+```php
+public function getItemsProperty()
+{
+    return [
+      ['secret' => false, 'name' => 'Item 1'],
+      ['secret' => true, 'name' => 'Item 2'],
+      ['secret' => true, 'name' => 'Item 3'],
+      ['secret' => false, 'name' => 'Item 4'],
+    ];
+}
+```
+
+In the Blade template, you want to loop through the items and only display the non-secret ones.
+
+```html
+@foreach($this->items->filter(...) as $item)
+```
+
+However, the entire dataset will be accessible from the frontend, even if you're not rendering any of the secret items.
+
+The user can easily fetch the Livewire component in Developer Tools and make a call like this:
+
+```js
+component.call('getItemsProperty');
+```
+
+The call will return all of the data returned by the `getItemsProperty()` method in PHP.
+
+You may think that in this case, you should just make the method `protected`/`private`. However, that would make it inaccessible from the Blade template. Even though Livewire uses `$this` in the template, it's accessing the object from the outside.
+
+Which means that although Blade templates are completely server-rendered, and let you access any PHP code in a secure way, you cannot access many of the properties or methods of Livewire components without making them public, which can cause unexpected data leaks.
+
+With this package, you can keep the property public and access it anywhere in PHP, while completely blocking any attempts at accessing it from the frontend.
+
 ## Installation
 
 PHP 8 is required.
