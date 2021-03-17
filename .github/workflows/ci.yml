@@ -22,13 +22,6 @@ jobs:
     - name: Run tests
       run: vendor/bin/phpunit
 
-    steps:
-    - uses: actions/checkout@v2
-    - name: Install composer dependencies
-      run: composer install
-    - name: Run psalm
-      run: vendor/bin/psalm
-
   php-cs-fixer:
     name: Code style (php-cs-fixer)
     runs-on: ubuntu-latest
