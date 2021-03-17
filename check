@@ -36,22 +36,6 @@ else
     esac
 fi
 
-if (./vendor/bin/psalm > /dev/null 2>/dev/null); then
-    echo '✅ Psalm OK'
-else
-    echo '❌ Psalm FAIL'
-    offer_run './vendor/bin/psalm'
-fi
-
-if (./vendor/bin/phpstan analyse > /dev/null 2>/dev/null); then
-    echo '✅ PHPStan OK'
-else
-    echo '❌ PHPStan FAIL'
-    offer_run './vendor/bin/phpstan analyse'
-fi
-
-(MYSQL_PORT=3307 docker-compose up -d > /dev/null 2>/dev/null) || true
-
 if (./vendor/bin/phpunit > /dev/null 2>/dev/null); then
     echo '✅ PHPUnit OK'
 else

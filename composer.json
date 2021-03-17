@@ -1,5 +1,5 @@
 {
-    "name": "stancl/package",
+    "name": "leanadmin/livewire-access",
     "description": "",
     "type": "library",
     "license": "MIT",
@@ -11,27 +11,19 @@
     ],
     "autoload": {
         "psr-4": {
-            "Stancl\\Package\\": "src/"
+            "Lean\\LivewireAccess\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Stancl\\Package\\Tests\\": "tests/"
+            "Lean\\LivewireAccess\\Tests\\": "tests/"
         }
     },
     "require": {
-        "illuminate/support": "^8.24"
+        "php": "^8.0",
+        "livewire/livewire": "^2.4"
     },
     "require-dev": {
-        "orchestra/testbench": "^6.9",
-        "vimeo/psalm": "^4.2",
-        "nunomaduro/larastan": "^0.6.10"
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "Stancl\\Package\\PackageServiceProvider"
-            ]
-        }
+        "orchestra/testbench": "^6.9"
     }
 }
