@@ -9,13 +9,17 @@ The package ships with two pairs of traits and attributes. One for *explicit* ac
 - Components which implement the trait for **explicit** access will *deny* access to all properties and methods if they don't have the `#[FrontendAccess]` attribute.
 - Components which implement the trait for **implicit** access will *allow* access to all properties and methods unless they have the `#[BlockFrontendAccess]` attribute.
 
-This acts as a layer on top of Livewire's logic for distinguishing public properties, but it gives you the ability to manually make changes when you need more control than property/method visibility.
+This acts as a layer on top of Livewire's `public`-check logic, but gives you much more fine grained control.
 
 ## Why use this?
 
-The trait for only allowing explicit access can also be useful to prevent accidentally making methods `public` when it's not needed, which has the potential to lead to security issues.
+Sometimes, you may want allow access to a component's property in PHP — outside the component — while not allowing access from the frontend. For that, you can use the `WithImplicitAccess` trait. Frontend access will be enabled for all properties by default, but you can disable it for a specific property (or method).
 
-This can be especially useful on teams with junior engineers who don't yet have a full understanding of Livewire's internals, but can be very productive with it.
+Other times, you may simply want more assurance than Livewire provides out of the box. The `WithExplicitAccess` trait is made for that. It disables all frontend access, and requires you to manually enable it on specific properties/methods.
+
+The second option is recommended, because it provides the most security benefits. Accidentally making methods `public` is common, and it can cause security issues.
+
+It especially useful for teams with junior engineers who don't yet have a full understanding of Livewire's internals, but can be very productive with it.
 
 ## Installation
 
