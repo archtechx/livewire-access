@@ -17,9 +17,7 @@ Sometimes, you may want allow access to a component's property in PHP — outsid
 
 Other times, you may simply want more assurance than Livewire provides out of the box. The `WithExplicitAccess` trait is made for that. It disables all frontend access, and requires you to manually enable it on specific properties/methods.
 
-The second option is recommended, because it provides the most security benefits. Accidentally making methods `public` is common, and it can cause security issues.
-
-It especially useful for teams with junior engineers who don't yet have a full understanding of Livewire's internals, but can be very productive with it.
+The second option is recommended, because it provides the most security benefits. Accidentally making methods `public` is common, and it can cause security issues. Disabling implicit access can be especially useful on teams with junior engineers who don't yet have a full understanding of Livewire's internals, but can be very productive with it.
 
 ## Installation
 
