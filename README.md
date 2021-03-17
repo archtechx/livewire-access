@@ -49,7 +49,9 @@ The user can easily fetch the Livewire component in Developer Tools and make a c
 component.call('getItemsProperty');
 ```
 
-The call will return all of the data returned by the `getItemsProperty()` method in PHP.
+It will return all of the data returned by the `getItemsProperty()` method in PHP.
+
+<img width="348" alt="Screen Shot 2021-03-17 at 21 53 00" src="https://user-images.githubusercontent.com/33033094/111536933-26f87680-876b-11eb-98c5-8b7f40f1a5de.png">
 
 You may think that in this case, you should just make the method `protected`/`private`. However, that would make it inaccessible from the Blade template. Even though Livewire uses `$this` in the template, it's accessing the object from the outside.
 
