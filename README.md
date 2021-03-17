@@ -71,7 +71,7 @@ To enable the implicit access mode, i.e. keep using the same mode , use the `Wit
 ```php
 use Livewire\Component;
 use Lean\LivewireAccess\WithImplicitAccess;
-use Lean\LivewireAccess\FrontendAccess;
+use Lean\LivewireAccess\BlockFrontendAccess;
 
 class MyComponent extends Component
 {
