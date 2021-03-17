@@ -6,7 +6,7 @@ use Lean\LivewireAccess\WithExplicitAccess;
 use Lean\LivewireAccess\FrontendAccess;
 use Livewire\Component;
 
-class TestComponent extends Component
+class ExplicitComponent extends Component
 {
     use WithExplicitAccess;
 
