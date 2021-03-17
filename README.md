@@ -11,7 +11,7 @@ The package ships with two pairs of traits and attributes. One for *explicit* ac
 
 This acts as a layer on top of Livewire's logic for distinguishing public properties, but it gives you the ability to manually make changes when you need more control than property/method visibility.
 
-## Why this is useful
+## Why use this?
 
 The trait for only allowing explicit access can also be useful to prevent accidentally making methods `public` when it's not needed, which has the potential to lead to security issues.
 
