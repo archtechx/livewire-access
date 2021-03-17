@@ -21,6 +21,8 @@ The second option is recommended, because it provides the most security benefits
 
 ## Installation
 
+PHP 8 is required.
+
 ```sh
 composer require leanadmin/livewire-access
 ```
