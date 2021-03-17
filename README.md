@@ -4,12 +4,18 @@ This package adds PHP 8.0 attribute support to Livewire. In specific, the attrib
 
 The package ships with two pairs of traits and attributes. One for *explicit* access, and one for *implicit* access.
 
+## How it works
+
 - Components which implement the trait for **explicit** access will *deny* access to all properties and methods if they don't have the `#[FrontendAccess]` attribute.
 - Components which implement the trait for **implicit** access will *allow* access to all properties and methods unless they have the `#[BlockFrontendAccess]` attribute.
 
 This acts as a layer on top of Livewire's logic for distinguishing public properties, but it gives you the ability to manually make changes when you need more control than property/method visibility.
 
-The trait for only allowing explicit access can also be useful to prevent accidentally making methods `public` when it's not needed, which has the potential to lead to security issues. This can be especially useful on teams with junior engineers who don't yet have a full understanding of Livewire's internals, but can be very productive with it.
+## Why this is useful
+
+The trait for only allowing explicit access can also be useful to prevent accidentally making methods `public` when it's not needed, which has the potential to lead to security issues.
+
+This can be especially useful on teams with junior engineers who don't yet have a full understanding of Livewire's internals, but can be very productive with it.
 
 ## Installation
 
