@@ -1,0 +1,37 @@
+{
+    "name": "stancl/package",
+    "description": "",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Samuel Štancl",
+            "email": "samuel.stancl@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Stancl\\Package\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Stancl\\Package\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "illuminate/support": "^8.24"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.9",
+        "vimeo/psalm": "^4.2",
+        "nunomaduro/larastan": "^0.6.10"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Stancl\\Package\\PackageServiceProvider"
+            ]
+        }
+    }
+}

@@ -1,0 +1,25 @@
+includes:
+    - ./vendor/nunomaduro/larastan/extension.neon
+
+parameters:
+    paths:
+        - src
+        - tests
+
+    level: 8
+
+    universalObjectCratesClasses:
+        - Illuminate\Routing\Route
+
+    ignoreErrors:
+        # -
+        #     message: '#Offset (.*?) does not exist on array\|null#'
+        #     paths:
+        #         - tests/*
+        # -
+        #    message: '#expects resource, resource\|false given#'
+        #    paths:
+        #        - tests/*
+        # - '#should return \$this#'
+
+    checkMissingIterableValueType: false
