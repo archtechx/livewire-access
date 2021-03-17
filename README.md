@@ -1,4 +1,4 @@
-# Livewire Access
+# Explicit property/method access for Livewire
 
 This package adds PHP 8.0 attribute support to Livewire. In specific, the attributes are used for flagging component properties and methods as *frontend-accessible*.
 
