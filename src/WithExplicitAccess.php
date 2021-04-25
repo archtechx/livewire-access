@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Lean\LivewireAccess;
 
-use ReflectionMethod;
-use ReflectionProperty;
 use Illuminate\Support\Str;
 use ReflectionClass;
+use ReflectionMethod;
+use ReflectionProperty;
 
 trait WithExplicitAccess
 {
