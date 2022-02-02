@@ -6,3 +6,4 @@ vendor/
 .vscode/
 coverage/
 node_modules
+.php-cs-fixer.cache
