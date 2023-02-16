@@ -1,5 +1,8 @@
 name: CI
 
+env:
+  XDEBUG_MODE: 'coverage'
+
 on:
   push:
   pull_request:
