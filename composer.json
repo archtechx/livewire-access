@@ -24,7 +24,7 @@
         "livewire/livewire": "^2.10"
     },
     "require-dev": {
-        "orchestra/testbench": "^6.9|^7.0"
+        "orchestra/testbench": "^7.0|^8.0"
     },
     "minimum-stability": "dev",
     "prefer-stable": true
